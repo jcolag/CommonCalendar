@@ -1,7 +1,7 @@
 fn main() {
     let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
     let moy = ["Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda", "Kib", "Broket"];
-    let yoff = 0;
+    let yoff: usize = 0;
     let dpm = 33;
     let dpw = dow.len();
     let mpy = moy.len();
@@ -12,7 +12,11 @@ fn main() {
         abbrd.truncate(2);
         print!("{} ", abbrd);
     }
-    
+
+    moff = print_days(moff, dpm, dpw);
+}
+
+fn print_days(moff: usize, dpm: usize, dpw: usize) -> usize {
     if moff != 0 {
         println!("");
     }
@@ -30,5 +34,6 @@ fn main() {
     }
 
     println!("");
-    moff = if moff == 0 { 3 } else { 0 };
+    return if moff == 0 { 3 } else { 0 };
 }
+
