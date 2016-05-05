@@ -7,13 +7,21 @@ fn main() {
     let mpy = moy.len();
     let mut moff = yoff;
 
-    for dd in 0..dpw {
-        let mut abbrd = String::from(dow[dd]);
-        abbrd.truncate(2);
-        print!("{} ", abbrd);
-    }
+    for mm in 0..mpy {
+        let spaces = (17 - moy[mm].len()) / 2;
+        for _ in 0..spaces {
+            print!(" ");
+        }
+        println!("{}", moy[mm]);
+        
+        for dd in 0..dpw {
+            let mut abbrd = String::from(dow[dd]);
+            abbrd.truncate(2);
+            print!("{} ", abbrd);
+        }
 
-    moff = print_days(moff, dpm, dpw);
+        moff = print_days(moff, dpm, dpw);
+    }
 }
 
 fn print_days(moff: usize, dpm: usize, dpw: usize) -> usize {
