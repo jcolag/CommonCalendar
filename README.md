@@ -29,4 +29,23 @@ The first step was to get a rough idea of the layout, by seeing the possible bre
 
 Beyond a week of intercalary days seems pointless, so process of elimination leaves _The Commons Calendar_ with a plausible, if quirky, eleven months of thirty-three days each, plus two intercalary days.
 
+### The Week
+
+A seven-day week _could_ work, but isn't necessary on an entirely new calendar.  Ideal cases would relate to the number of days in a month.  Discarding eleven-day weeks (though this idea has potential), doubling the other factor (three) to six is week-like, was apparently experimented with (along with five) by the Soviet Union, and makes all months six weeks long, nearly square.
+
+The days need names, of course.  In many cultures, the days are named for gods, but that seems crass in 2016.  However, the same sort of inspirational role may be supplied by major Free projects.  After some thinking, the most prominent and diverse projects seemed to be [Arduino](http://www.arduino.cc/), _[Sita Sings the Blues](http://www.sitasingstheblues.com/)_, [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) and [Wikimedia](https://wikimediafoundation.org/wiki/Home)'s related Free projects, the [Linux kernel](https://www.kernel.org/), [GNU](https://gnu.org/), and [Creative Commons](https://creativecommons.org/).
+
+Accounting for convenient pronunciation and simplicity (and replacing the name of Linux with its mascot, [Tux](https://en.wikipedia.org/wiki/Tux)), that suggests a list like...
+
+ - Duinday
+ - Sitaday
+ - Wikiday
+ - Tuxday
+ - Gnuday
+ - Commonday
+
+That's one software project, one hardware, two broad projects representing licenses, a movie, and an encyclopedia (and software type).  Sita even refers to the consort of a god, maintaining a link to traditional calendars.
+
+I haven't worked out a full eleven-day week as an alternative, but it has occurred to me that a major potential objection to a six-day week is that it changes the weekday/weekend balance that most of the world is currently familiar with, whereas eleven days with a tradition of three off (say, the first, middle, and last days) comes out to _almost_ the same ratio of days.  As hinted previously, the eleven-day week would also divide evenly into each month, making for a perpetual calendar.
+
 
