@@ -48,4 +48,25 @@ That's one software project, one hardware, two broad projects representing licen
 
 I haven't worked out a full eleven-day week as an alternative, but it has occurred to me that a major potential objection to a six-day week is that it changes the weekday/weekend balance that most of the world is currently familiar with, whereas eleven days with a tradition of three off (say, the first, middle, and last days) comes out to _almost_ the same ratio of days.  As hinted previously, the eleven-day week would also divide evenly into each month, making for a perpetual calendar.
 
+### Months of the Year
+
+As mentioned, there are eleven months, which would clearly be inconvenient in the real world, but that's not really the point, here.
+
+I decided that it made sense for the months to celebrate various principles of free culture.  Those that came to mind were freedom, transparency, participation, collaboration, sharing, replication, adaptation, equality, decentralization, attribution, and community.  However, just using words in some language seemed futile, so I turned to mythology...or, rather, mythologies that are part of free culture.
+
+Where can we find free culture pantheons?  The three sources that came to mind were Dunsany's [The Gods of Pegāna](https://en.wikipedia.org/wiki/The_Gods_of_Peg%C4%81na) (in the public domain), the fake [Illyrian gods](https://en.wikipedia.org/w/index.php?title=Paleo-Balkanic_mythology&oldid=192411335) posted to Wikipedia ([CC-BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), being first published on Wikipedia), and [William Blake's mythology](https://en.wikipedia.org/wiki/William_Blake's_mythology) (also public domain).  There are others, of course, but these seemed like they had the most potential, and with some _mild_ stretching of bailiwicks, produced...
+
+ - Freedom - Yarinareth (speed)
+ - Participation - Skarl (stamina)
+ - Transparency - Trogool (forbidden knowledge)
+ - Collaboration - Mikon (friendship)
+ - Sharing - Broket (fortune)
+ - Replication - Pertunda (fertility)
+ - Equality - Shkumbe (love)
+ - Adaptation - Kib (evolution)
+ - Decentralization - Jabim (broken things)
+ - Attribution - Zodrak (ambition)
+ - Community - Habaniah (hearth)
+
+Organizing them in hopes of making the months feel like a progression through the year came to Jabim, Zodrak, Trogool, Yanar, Shkumbe, Habniah, Skarl, Mikon, Pertunda, Kib, and Broket.
 
