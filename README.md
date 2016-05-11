@@ -52,9 +52,9 @@ I haven't worked out a full eleven-day week as an alternative, but it has occurr
 
 As mentioned, there are eleven months, which would clearly be inconvenient in the real world, but that's not really the point, here.
 
-I decided that it made sense for the months to celebrate various principles of free culture.  Those that came to mind were freedom, transparency, participation, collaboration, sharing, replication, adaptation, equality, decentralization, attribution, and community.  However, just using words in some language seemed futile, so I turned to mythology...or, rather, mythologies that are part of free culture.
+I decided that it made sense for the months to celebrate various principles of Free Culture.  Those that came to mind were freedom, transparency, participation, collaboration, sharing, replication, adaptation, equality, decentralization, attribution, and community.  However, just using words in some language seemed futile, so I turned to mythology...or, rather, mythologies that are part of Free Culture.
 
-Where can we find free culture pantheons?  The three sources that came to mind were Dunsany's [The Gods of Pegāna](https://en.wikipedia.org/wiki/The_Gods_of_Peg%C4%81na) (in the public domain), the fake [Illyrian gods](https://en.wikipedia.org/w/index.php?title=Paleo-Balkanic_mythology&oldid=192411335) posted to Wikipedia ([CC-BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), being first published on Wikipedia), and [William Blake's mythology](https://en.wikipedia.org/wiki/William_Blake's_mythology) (also public domain).  There are others, of course, but these seemed like they had the most potential, and with some _mild_ stretching of bailiwicks, produced...
+Where can we find Free Culture pantheons?  The three sources that came to mind were Dunsany's [The Gods of Pegāna](https://en.wikipedia.org/wiki/The_Gods_of_Peg%C4%81na) (in the public domain), the fake [Illyrian gods](https://en.wikipedia.org/w/index.php?title=Paleo-Balkanic_mythology&oldid=192411335) posted to Wikipedia ([CC-BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), being first published on Wikipedia), [William Blake's mythology](https://en.wikipedia.org/wiki/William_Blake's_mythology) (also public domain), and Voltaire's [Dictionnaire philosophique](https://en.wikipedia.org/wiki/Dictionnaire_philosophique), mentioning several "lesser gods" (also public domain).  There are others, of course, but these seemed like they had the most potential, and with some _mild_ stretching of bailiwicks, produced...
 
  - Freedom - Yarinareth (speed)
  - Participation - Skarl (stamina)
@@ -69,4 +69,19 @@ Where can we find free culture pantheons?  The three sources that came to mind w
  - Community - Habaniah (hearth)
 
 Organizing them in hopes of making the months feel like a progression through the year came to Jabim, Zodrak, Trogool, Yanar, Shkumbe, Habniah, Skarl, Mikon, Pertunda, Kib, and Broket.
+
+### Epagomenal Days
+
+Remember that the calendar was designed to be eleven months of thirty-three days, with two days left over.  The remaining days are [Intercalation](https://en.wikipedia.org/wiki/Intercalation_%28timekeeping%29).  For convenience, they are epagomenal days, outside of any month.
+
+The first epagomenal day comes between Yanar and Shkumbe.  Peer Day is intended to celebrate freedom and equality.
+
+The second comes between Broket and Jabim.  The Torrent Feast celebrates sharing and decentralization, and is intended to combine with the New Year celebration.
+
+The third, when one is needed (see the section on Leap Years), comes between Skarl and Mikon.  The Immersion Feast celebrates participation and collaboration.
+
+#### Alternatives
+
+Given that a general term for days used for intercalation are _intercalary days_, I briefly considered naming the first one after the [INTERCAL](https://en.wikipedia.org/wiki/INTERCAL) programming language and the second after [Kvikkalkul](http://workbench.cadenhead.org/book/homepage24/kvikkalkul/), a similarly infamous programming language...
+
 
