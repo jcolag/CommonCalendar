@@ -84,4 +84,12 @@ The third, when one is needed (see the section on Leap Years), comes between Ska
 
 Given that a general term for days used for intercalation are _intercalary days_, I briefly considered naming the first one after the [INTERCAL](https://en.wikipedia.org/wiki/INTERCAL) programming language and the second after [Kvikkalkul](http://workbench.cadenhead.org/book/homepage24/kvikkalkul/), a similarly infamous programming language...
 
+### Leap Years
+
+As nearly everybody knows, a solar year is currently around 365.2421897 days.  While traditional calendars approximate this fractional part as one fourth (0.25) with many corrections, a significantly better (if less convenient) approximation is eight thirty-thirds (0.2424...).
+
+Therefore, a Commons Leap Year occurs at intervals of four years seven times, followed by a span of five years.
+
+Like all approximations, this regime does still drift.  Here, the calendar will slip by a full day slightly less than every 4,264 years.  This is likely to be inconsequential for most purposes, but nevertheless, the first leap year after years numbered as multiples of 4,264 are to be skipped.  Presumably, further correction will be required at some point, but that is left as an exercise to the reader.
+
 
