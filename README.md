@@ -86,10 +86,22 @@ Given that a general term for days used for intercalation are _intercalary days_
 
 ### Leap Years
 
-As nearly everybody knows, a solar year is currently around 365.2421897 days.  While traditional calendars approximate this fractional part as one fourth (0.25) with many corrections, a significantly better (if less convenient) approximation is eight thirty-thirds (0.2424...).
+As most people know to some degree, a solar year is currently around 365.2421897 days.  While traditional calendars approximate this fractional part as one fourth (0.25) with many corrections, a significantly better (if less convenient) approximation is eight thirty-thirds (0.2424...).
 
 Therefore, a Commons Leap Year occurs at intervals of four years seven times, followed by a span of five years.
 
 Like all approximations, this regime does still drift.  Here, the calendar will slip by a full day slightly less than every 4,264 years.  This is likely to be inconsequential for most purposes, but nevertheless, the first leap year after years numbered as multiples of 4,264 are to be skipped.  Presumably, further correction will be required at some point, but that is left as an exercise to the reader.
+
+### Start Date
+
+The trickiest part of _The Commons Calendar_ was deciding on a date from which to anchor the dates, the first of Jabim, Year 0.  A zero-year is, of course, a necessity for easily handling dates _prior_ to the calendar.
+
+Early candidates included the releases of works important to Free Culture, like the [GNU Manifesto](https://en.wikipedia.org/wiki/GNU_Manifesto) (March AD 1985), the [GNU Public License](https://en.wikipedia.org/wiki/GNU_General_Public_License) (25 February AD 1989), the [Open Content Project](https://en.wikipedia.org/wiki/Open_Content_Project) (c AD 1998), [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) (December AD 2002), and others.  None of those felt right, however.  It was similarly difficult to authenticate a first Free Culture work, with many candidates offered with little evidence and rarely specific dates.
+
+The eventual decision was to attempt to go back to the beginning of time-keeping, the first authenticated date that we can map to a date on the modern calendar.  The best candidate for such a date, as of this writing (Spring 2016) is the 14th of Simanu in ancient Sumer, a Lunar eclipse known to have occurred on [April 4, 2094 BC](http://www.historychannel.com.au/classroom/day-in-history/534/earliest-record-of-a-lunar-eclipse).  This, then, is _The Commons Calendar_'s "epoch."
+
+Presumably, others will be discovered, but the calendar will remain fixed.
+
+(Please note:  Use of _BC_ and _AD_, rather than the secular _BCE_ and _CE_, is for clarity, both avoiding the similarity of the latter pair of terms and the lack of clarity of "common era.")
 
 
