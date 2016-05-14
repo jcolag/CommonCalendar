@@ -1,10 +1,13 @@
+extern crate time;
+
 fn main() {
     let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
     let moy = ["Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda", "Kib", "Broket"];
-    let yoff: usize = 0;
     let dpm = 33;
     let dpw = dow.len();
     let mpy = moy.len();
+    let (year, month, day, yoff) = current_day(time::now());
+    let wd = (yoff + month * 3 + day) % dpw;
     let mut moff = yoff;
 
     for mm in 0..mpy {
@@ -20,11 +23,14 @@ fn main() {
             print!("{} ", abbrd);
         }
 
-        moff = print_days(moff, dpm, dpw);
+        let dd = if mm == month { day } else { 1000 };
+        moff = print_days(moff, dpm, dpw, dd);
     }
+
+    println!("Today is {}, {:02} of {} {}.  [{}.{:02}.{:02}]", dow[wd], day, moy[month], year, year, month + 1, day);
 }
 
-fn print_days(moff: usize, dpm: usize, dpw: usize) -> usize {
+fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> usize {
     if moff != 0 {
         println!("");
     }
@@ -38,10 +44,45 @@ fn print_days(moff: usize, dpm: usize, dpw: usize) -> usize {
             println!("");
         }
 
-        print!("{:2} ", day);
+        let ch = if day == highlight { ">" } else if day + 1 == highlight { "<" } else { " " };
+        print!("{:2}{}", day, ch);
     }
 
     println!("");
     return if moff == 0 { 3 } else { 0 };
+}
+
+fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
+    let epoch_days_offset = 1483889;
+    let seconds_per_day = 86400;
+    let now = current_time.to_timespec();
+    let days_since_epoch = (epoch_days_offset + now.sec / seconds_per_day) as i32;
+    let days_per_year = 365;
+    let leap_year = 4;
+    let not_leap_year = 33;
+    let days_per_month = 33;
+    
+    let mut count = 1;
+    let mut days_remaining = days_since_epoch;
+    let mut year = 0;
+    while days_remaining > days_per_year + 1 {
+        days_remaining -= days_per_year;
+        year += 1;
+        if count > not_leap_year {
+            count = 1;
+        }
+        if count % leap_year == 0 {
+            days_remaining -= 1;
+        }
+        count += 1;
+    }
+    if days_remaining == days_per_year + 1 && count % leap_year == 0 {
+        days_remaining = 0;
+        year += 1;
+    }
+    
+    let month = days_remaining / days_per_month;
+    let day = days_remaining - month * days_per_month;
+    return (year, month as usize, day as usize + 1, (year % 2 * 3) as usize);
 }
 
