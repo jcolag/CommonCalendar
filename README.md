@@ -104,4 +104,22 @@ Presumably, others will be discovered, but the calendar will remain fixed.
 
 (Please note:  Use of _BC_ and _AD_, rather than the secular _BCE_ and _CE_, is for clarity, both avoiding the similarity of the latter pair of terms and the lack of clarity of "common era.")
 
+### Holidays
+
+We have, of course, already seen four intended holidays:  New Year's Day, Peer Day, the Immersion Feast (in Leap Years), and the Torrent Feast.
+
+In addition, there are holidays that are both naturally relevant and (accounting for drifting ancient calendars and nearby historical incidents) so common and widespread that they're presumably required for any calendar:  The solstices and equinoctes.
+
+ - Summer Solstice, 12 Trogool:  On the longest day of the year, many summer holidays revolve around power and purification, with fire- or water-based rituals.  There can often be some nationalist tendencies, in the modern day.  In the United States, Independence Day and Flag day flank the solstice, but those weeks are celebrated around the world (under various names) with bonfires, fireworks, waterfronts, and often dancing.  Here, this is related to the [Free Software Definition](https://www.gnu.org/philosophy/free-sw.html)'s freedom to copy and improve works.
+ 
+ - Autumnal (Southward) Equinox, 04 Habinah:  Harvest festivals and feasts abound, though naturally, many are pushed back to the actual harvest season.  Most regions have one, with Thanksgiving in the United States probably being the latest in the year.  Chuseok, Pomona, Mehregan, and so forth are also strongly related.  Here, harvest broadly resembles the freedom to redistribute works.
+ 
+ - Winter Solstice, 29 Mikon:  On the longest night of the year, reflection on death and conservation abounds, often with a final feast of the season.  It also tends to be associated with solar or fire birth mythology, presumably due to the day being short and (in the Northern hemisphere) the sun being at its smallest.  Christmas and its related traditions figure into the period, as does Dongzhi, Korochun, Sanghamitta Day, Hanukkah, Shalako, Shab-e Chelleh, Yule, and so forth.  Winter traditions map to the freedom to use works for any purpose.
+ 
+ - Vernal (Northward) Equinox, 21 Broket:  Spring brings an assortment of holidays with birth and rebirth themes and implicit or explicit fertility rites.  Easter, Passover, many calendar new years, Mother's Day, Sham el-Nessim, and so forth.  Planting and fertility, lastly, map to the freedom to study works, including their sources.
+
+Note that these are the interpretation of the Northern Hemisphere.  In much of the Southern Hemisphere, the seasons are clearly offset by two in the cycle.  Additionally, examples may vary from the actual date, given that various calendars originate historically on Lunar calendars.
+
+To round this out, International Workers' Day is recommended (28 Jabim), as it effectively celebrates collective problem-solving and the nameless, toiling workers, which seems to reflect the general Free Culture ethos.
+
 
