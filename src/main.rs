@@ -86,3 +86,8 @@ fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
     return (year, month as usize, day as usize + 1, (year % 2 * 3) as usize);
 }
 
+fn is_leap_year(year: usize) -> bool {
+    let rem = year % 33;
+    return rem != 0 && rem % 4 == 0;
+}
+
