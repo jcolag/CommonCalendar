@@ -56,17 +56,17 @@ I decided that it made sense for the months to celebrate various principles of F
 
 Where can we find Free Culture pantheons?  The three sources that came to mind were Dunsany's [The Gods of Pegāna](https://en.wikipedia.org/wiki/The_Gods_of_Peg%C4%81na) (in the public domain), the fake [Illyrian gods](https://en.wikipedia.org/w/index.php?title=Paleo-Balkanic_mythology&oldid=192411335) posted to Wikipedia ([CC-BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License), being first published on Wikipedia), [William Blake's mythology](https://en.wikipedia.org/wiki/William_Blake's_mythology) (also public domain), and Voltaire's [Dictionnaire philosophique](https://en.wikipedia.org/wiki/Dictionnaire_philosophique), mentioning several "lesser gods" (also public domain).  There are others, of course, but these seemed like they had the most potential, and with some _mild_ stretching of bailiwicks, produced...
 
- - Freedom - Yarinareth (speed)
- - Participation - Skarl (stamina)
- - Transparency - Trogool (forbidden knowledge)
- - Collaboration - Mikon (friendship)
- - Sharing - Broket (fortune)
- - Replication - Pertunda (fertility)
- - Equality - Shkumbe (love)
- - Adaptation - Kib (evolution)
- - Decentralization - Jabim (broken things)
- - Attribution - Zodrak (ambition)
- - Community - Habaniah (hearth)
+ - Decentralization - __Jabim__ (broken things)
+ - Attribution - __Zodrak__ (ambition)
+ - Transparency - __Trogool__ (forbidden knowledge)
+ - Freedom - _Yarinareth_ (speed), renamed __Yanar__
+ - Equality - __Shkumbe__ (love)
+ - Community - __Habaniah__ (hearth)
+ - Participation - __Skarl__ (stamina)
+ - Collaboration - __Mikon__ (friendship)
+ - Replication - __Pertunda__ (fertility)
+ - Adaptation - __Kib__ (evolution)
+ - Sharing - __Broket__ (fortune)
 
 Organizing them in hopes of making the months feel like a progression through the year came to Jabim, Zodrak, Trogool, Yanar, Shkumbe, Habniah, Skarl, Mikon, Pertunda, Kib, and Broket.
 
@@ -76,9 +76,9 @@ Remember that the calendar was designed to be eleven months of thirty-three days
 
 The first epagomenal day comes between Yanar and Shkumbe.  Peer Day is intended to celebrate freedom and equality.
 
-The second comes between Broket and Jabim.  The Torrent Feast celebrates sharing and decentralization, and is intended to combine with the New Year celebration.
+The second comes between Skarl and Mikon.  The Torrent Feast celebrates sharing and decentralization, and is intended to combine with the New Year celebration.
 
-The third, when one is needed (see the section on Leap Years), comes between Skarl and Mikon.  The Immersion Feast celebrates participation and collaboration.
+The third and last, when one is needed (see the section on _Leap Years_, below), comes between Broket and Jabim.  The Immersion Feast celebrates participation and collaboration.
 
 #### Alternatives
 
