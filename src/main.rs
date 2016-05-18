@@ -91,3 +91,26 @@ fn is_leap_year(year: usize) -> bool {
     return rem != 0 && rem % 4 == 0;
 }
 
+fn what_holiday(month: usize, day: usize) -> String {
+    let mut result = format!("");
+    if month == 0 && day == 1 {
+        result = format!(", New Year's Day");
+    }
+    else if month == 2 && day == 12 {
+        result = format!(", Purification Day");
+    }
+    else if month == 5 && day == 4 {
+        result = format!(", Harvest Gift");
+    }
+    else if month == 7 && day == 29 {
+        result = format!(", Familytide");
+    }
+    else if month == 10 && day == 21 {
+        result = format!(", Freedom Day");
+    }
+    else if month == 0 && day == 27 {
+        result = format!(", International Workers' Day");
+    }
+    return result;
+}
+
