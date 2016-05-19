@@ -25,6 +25,15 @@ fn main() {
 
         let dd = if mm == month { day } else { 1000 };
         moff = print_days(moff, dpm, dpw, dd);
+        if mm == 2 {
+            println!("-- Peer Day --");
+        }
+        else if mm == 6 {
+            println!("-- Torrent Feast --");
+        }
+        else if is_leap_year(year) && mm == 10 {
+            println!("-- Immersion Feast --");
+        }
     }
 
     println!("Today is {}, {:02} of {} {}.  [{}.{:02}.{:02}]", dow[wd], day, moy[month], year, year, month + 1, day);
