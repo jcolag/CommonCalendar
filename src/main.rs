@@ -36,7 +36,10 @@ fn main() {
         }
     }
 
-    println!("Today is {}, {:02} of {} {}.  [{}.{:02}.{:02}]", dow[wd], day, moy[month], year, year, month + 1, day);
+    let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
+    let mut daystr = format!("{:02}.{:02}", month + 1, day);
+    let hol = format!("{}", what_holiday(month, day));
+    println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
 }
 
 fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> usize {
