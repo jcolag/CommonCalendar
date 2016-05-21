@@ -38,6 +38,20 @@ fn main() {
 
     let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
     let mut daystr = format!("{:02}.{:02}", month + 1, day);
+    if day == 34 {
+        if month == 2 {
+            datestr = format!("Peer Day");
+            daystr = format!("P");
+        }
+        else if month == 6 {
+            datestr = format!("Torrent Feast");
+            daystr = format!("T");
+        }
+        else if month == 10 {
+            datestr = format!("Immersion Feast");
+            daystr = format!("T");
+        }
+    }
     let hol = format!("{}", what_holiday(month, day));
     println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
 }
