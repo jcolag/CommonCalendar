@@ -106,9 +106,17 @@ fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
         days_remaining = 0;
         year += 1;
     }
-    
-    let month = days_remaining / days_per_month;
-    let day = days_remaining - month * days_per_month;
+
+    let mut month = 0;
+    while days_remaining > days_per_month {
+        month += 1;
+        days_remaining -= days_per_month;
+        if month == 3 || month == 7 || month == 11 {
+            days_remaining -= 1;
+        }
+    }
+
+    let day = days_remaining;
     return (year, month as usize, day as usize + 1, (year % 2 * 3) as usize);
 }
 
