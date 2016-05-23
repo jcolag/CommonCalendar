@@ -26,13 +26,13 @@ fn main() {
         let dd = if mm == month { day } else { 1000 };
         moff = print_days(moff, dpm, dpw, dd);
         if mm == 2 {
-            println!("-- Peer Day --");
+            println!("--  Peer  Day  --");
         }
         else if mm == 6 {
-            println!("-- Torrent Feast --");
+            println!("--Torrent Feast--");
         }
         else if is_leap_year(year) && mm == 10 {
-            println!("-- Immersion Feast --");
+            println!("--Immersion Day--");
         }
     }
 
