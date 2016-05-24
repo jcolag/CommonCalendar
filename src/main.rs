@@ -133,11 +133,26 @@ fn what_holiday(month: usize, day: usize) -> String {
     else if month == 2 && day == 12 {
         result = format!(", Purification Day");
     }
+    else if month == 2 && day == 24 {
+        result = format!(", Document Freedom Day");
+    }
+    else if month == 3 && day == 33 {
+        result = format!(", Hardware Freedom Day");
+    }
     else if month == 5 && day == 4 {
         result = format!(", Harvest Gift");
     }
+    else if month == 5 && day == 9 {
+        result = format!(", Culture Freedom Day");
+    }
     else if month == 7 && day == 29 {
         result = format!(", Familytide");
+    }
+    else if month == 8 && day == 33 {
+        result = format!(", Software Freedom Day");
+    }
+    else if month == 9 && day == 30 {
+        result = format!(", Open Access Day");
     }
     else if month == 10 && day == 21 {
         result = format!(", Freedom Day");
