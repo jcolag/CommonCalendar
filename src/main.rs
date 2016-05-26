@@ -57,24 +57,27 @@ fn main() {
 }
 
 fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> usize {
+    let mut month = format!("");
+    
     if moff != 0 {
-        println!("");
+        month = format!("{}\n", month);
     }
     
     for _ in 0 .. moff {
-        print!("   ");
+        month = format!("{}   ", month);
     }
     
     for day in 1 .. dpm + 1 {
         if (day + moff) % dpw == 1 {
-            println!("");
+            month = format!("{}\n", month);
         }
 
         let ch = if day == highlight { ">" } else if day + 1 == highlight { "<" } else { " " };
-        print!("{:2}{}", day, ch);
+        month = format!("{}{:2}{}", month, day, ch);
     }
 
-    println!("");
+    month = format!("{}\n", month);
+    print!("{}", month);
     return if moff == 0 { 3 } else { 0 };
 }
 
