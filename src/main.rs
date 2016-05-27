@@ -15,25 +15,30 @@ fn main() {
         for _ in 0..spaces {
             print!(" ");
         }
-        println!("{}", moy[mm]);
+        let mut month_text = format!("{}\n", moy[mm]);
         
         for dd in 0..dpw {
             let mut abbrd = String::from(dow[dd]);
             abbrd.truncate(2);
-            print!("{} ", abbrd);
+            month_text = format!("{}{} ", month_text, abbrd);
         }
 
         let dd = if mm == month { day } else { 1000 };
-        moff = print_days(moff, dpm, dpw, dd);
+        let days = print_days(moff, dpm, dpw, dd);
+        month_text = format!("{}{}", month_text, days.0);
+        moff = days.1;
         if mm == 2 {
-            println!("--  Peer  Day  --");
+            month_text = format!("{}--  Peer  Day  --", month_text);
         }
         else if mm == 6 {
-            println!("--Torrent Feast--");
+            month_text = format!("{}--Torrent Feast--", month_text);
         }
         else if is_leap_year(year) && mm == 10 {
-            println!("--Immersion Day--");
+            month_text = format!("{}--Immersion Day--", month_text);
         }
+
+        month_text = format!("{}\n", month_text);
+        print!("{}", month_text);
     }
 
     let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
@@ -56,7 +61,7 @@ fn main() {
     println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
 }
 
-fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> usize {
+fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String, usize) {
     let mut month = format!("");
     
     if moff != 0 {
@@ -77,8 +82,7 @@ fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> usize {
     }
 
     month = format!("{}\n", month);
-    print!("{}", month);
-    return if moff == 0 { 3 } else { 0 };
+    return (month, if moff == 0 { 3 } else { 0 });
 }
 
 fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
