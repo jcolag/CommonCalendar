@@ -12,11 +12,12 @@ fn main() {
 
     for mm in 0..mpy {
         let spaces = (17 - moy[mm].len()) / 2;
+        let mut month_text = format!("");
         for _ in 0..spaces {
-            print!(" ");
+            month_text = format!("{} ", month_text);
         }
-        let mut month_text = format!("{}\n", moy[mm]);
-        
+
+        month_text = format!("{}{}\n", month_text, moy[mm]);
         for dd in 0..dpw {
             let mut abbrd = String::from(dow[dd]);
             abbrd.truncate(2);
@@ -24,7 +25,7 @@ fn main() {
         }
 
         let dd = if mm == month { day } else { 1000 };
-        let days = print_days(moff, dpm, dpw, dd);
+        let days = format_days(moff, dpm, dpw, dd);
         month_text = format!("{}{}", month_text, days.0);
         moff = days.1;
         if mm == 2 {
@@ -61,7 +62,7 @@ fn main() {
     println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
 }
 
-fn print_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String, usize) {
+fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String, usize) {
     let mut month = format!("");
     
     if moff != 0 {
