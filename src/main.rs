@@ -1,5 +1,7 @@
 extern crate time;
 
+use std::collections::LinkedList;
+
 fn main() {
     let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
     let moy = ["Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda", "Kib", "Broket"];
@@ -9,6 +11,7 @@ fn main() {
     let (year, month, day, yoff) = current_day(time::now());
     let wd = (yoff + month * 3 + day) % dpw;
     let mut moff = yoff;
+    let mut months_across = LinkedList::<String>::new();
 
     for mm in 0..mpy {
         let spaces = (17 - moy[mm].len()) / 2;
@@ -40,6 +43,7 @@ fn main() {
 
         month_text = format!("{}\n", month_text);
         print!("{}", month_text);
+        months_across.push_back(month_text);
     }
 
     let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
