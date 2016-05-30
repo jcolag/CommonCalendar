@@ -1,6 +1,7 @@
 extern crate time;
 
 use std::collections::LinkedList;
+use std::str::Split;
 
 fn main() {
     let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
@@ -173,5 +174,35 @@ fn what_holiday(month: usize, day: usize) -> String {
         result = format!(", International Workers' Day");
     }
     return result;
+}
+
+fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
+    let month_iterator = months.iter();
+    let mut length = 0;
+    let mut split_months = LinkedList::<Split<&str>>::new();
+    for m in month_iterator {
+        let split = m.split("\n");
+        if split.clone().count() > length {
+            length = split.clone().count();
+        }
+        split_months.push_back(split);
+    }
+
+    for i in 0..(length - 1) {
+        for _ in 0..front {
+            print!(" ");
+        }
+
+        let split_iterator = split_months.iter();
+        for m in split_iterator {
+            let line = m.clone().nth(i);
+            match line {
+                Some(l) => print!("{}{}", if l == "" { "                  " } else { l }, buffer),
+                None => {},
+            }
+        }
+
+        println!("");
+    }
 }
 
