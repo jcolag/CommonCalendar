@@ -10,7 +10,7 @@ fn main() {
     let dpw = dow.len();
     let mpy = moy.len();
     let (year, month, day, yoff) = current_day(time::now());
-    let wd = (yoff + month * 3 + day) % dpw;
+    let wd = (yoff + month * 3 + day - 1) % dpw;
     let mut moff = yoff;
     let mut months_across = LinkedList::<String>::new();
 
