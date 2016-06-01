@@ -21,7 +21,12 @@ fn main() {
             month_text = format!("{} ", month_text);
         }
 
-        month_text = format!("{}{}\n", month_text, moy[mm]);
+        month_text = format!("{}{}", month_text, moy[mm]);
+        for _ in 0..(18 - spaces - moy[mm].len()) {
+            month_text = format!("{} ", month_text);
+        }
+
+        month_text = format!("{}\n", month_text);
         for dd in 0..dpw {
             let mut abbrd = String::from(dow[dd]);
             abbrd.truncate(2);
@@ -43,10 +48,14 @@ fn main() {
         }
 
         month_text = format!("{}\n", month_text);
-        print!("{}", month_text);
         months_across.push_back(month_text);
+        if mm % 4 == 3 {
+            month_zipper(months_across.clone(), "  ", 1);
+            months_across.clear();
+        }
     }
 
+    month_zipper(months_across.clone(), "  ", 11);
     let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
     let mut daystr = format!("{:02}.{:02}", month + 1, day);
     if day == 34 {
@@ -69,15 +78,15 @@ fn main() {
 
 fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String, usize) {
     let mut month = format!("");
-    
+
     if moff != 0 {
         month = format!("{}\n", month);
     }
-    
+
     for _ in 0 .. moff {
         month = format!("{}   ", month);
     }
-    
+
     for day in 1 .. dpm + 1 {
         if (day + moff) % dpw == 1 {
             month = format!("{}\n", month);
@@ -85,6 +94,10 @@ fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String
 
         let ch = if day == highlight { ">" } else if day + 1 == highlight { "<" } else { " " };
         month = format!("{}{:2}{}", month, day, ch);
+    }
+
+    for _ in 0 .. (3 - moff) {
+        month = format!("{}   ", month);
     }
 
     month = format!("{}\n", month);
