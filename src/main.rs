@@ -50,12 +50,12 @@ fn main() {
         month_text = format!("{}\n", month_text);
         months_across.push_back(month_text);
         if mm % 4 == 3 {
-            month_zipper(months_across.clone(), "  ", 1);
+            month_zipper(months_across.clone(), "   ", 1);
             months_across.clear();
         }
     }
 
-    month_zipper(months_across.clone(), "  ", 11);
+    month_zipper(months_across.clone(), "   ", 11);
     let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
     let mut daystr = format!("{:02}.{:02}", month + 1, day);
     if day == 34 {
@@ -207,15 +207,19 @@ fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
         }
 
         let split_iterator = split_months.iter();
+        let mut full_line = format!("");
         for m in split_iterator {
             let line = m.clone().nth(i);
             match line {
-                Some(l) => print!("{}{}", if l == "" { "                  " } else { l }, buffer),
+                Some(l) => {
+                    let part = if l == "" { "                  " } else { l };
+                    full_line = format!("{}{}{}", full_line, part, buffer);
+                },
                 None => {},
             }
         }
 
-        println!("");
+        println!("{}", full_line.trim_right());
     }
 }
 
