@@ -122,4 +122,40 @@ Note that these are the interpretation of the Northern Hemisphere.  In much of t
 
 To round this out, International Workers' Day is recommended (28 Jabim), as it effectively celebrates collective problem-solving and the nameless, toiling workers, which seems to reflect the general Free Culture ethos.  In addition, we can also add the Free Culture equivalents of [Hallmark holidays](https://en.wikipedia.org/wiki/Hallmark_holiday), the days dedicated to promoting some aspect of Free Culture:  Document Freedom Day, Hardware Freedom Day, Culture Freedom Day, Software Freedom Day, and Open Access Day.
 
+## Example
+
+Running the program on May 31st, 2016, produces the following calendar for the year:
+
+````
+       Jabim               Zodrak               Trogool               Yanar
+ Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co
+           1  2  3     1  2  3  4  5  6              1  2  3     1  2  3  4  5  6
+  4  5  6  7  8  9     7  8  9 10 11 12     4  5  6  7  8  9     7  8  9 10 11 12
+ 10 11 12 13 14 15    13 14 15 16 17 18    10 11 12 13 14 15    13 14 15 16 17 18
+ 16 17 18 19 20 21    19 20 21 22 23 24    16 17 18 19 20 21    19 20 21 22 23 24
+ 22 23 24 25 26 27    25 26 27<28>29 30    22 23 24 25 26 27    25 26 27 28 29 30
+ 28 29 30 31 32 33    31 32 33             28 29 30 31 32 33    31 32 33
+                                           --  Peer  Day  --
+      Shkumbe              Habniah               Skarl                Mikon
+ Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co
+           1  2  3     1  2  3  4  5  6              1  2  3     1  2  3  4  5  6
+  4  5  6  7  8  9     7  8  9 10 11 12     4  5  6  7  8  9     7  8  9 10 11 12
+ 10 11 12 13 14 15    13 14 15 16 17 18    10 11 12 13 14 15    13 14 15 16 17 18
+ 16 17 18 19 20 21    19 20 21 22 23 24    16 17 18 19 20 21    19 20 21 22 23 24
+ 22 23 24 25 26 27    25 26 27 28 29 30    22 23 24 25 26 27    25 26 27 28 29 30
+ 28 29 30 31 32 33    31 32 33             28 29 30 31 32 33    31 32 33
+                                           --Torrent Feast--
+               Pertunda                Kib                Broket
+           Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co    Du Si Wi Tu Gn Co
+                     1  2  3     1  2  3  4  5  6              1  2  3
+            4  5  6  7  8  9     7  8  9 10 11 12     4  5  6  7  8  9
+           10 11 12 13 14 15    13 14 15 16 17 18    10 11 12 13 14 15
+           16 17 18 19 20 21    19 20 21 22 23 24    16 17 18 19 20 21
+           22 23 24 25 26 27    25 26 27 28 29 30    22 23 24 25 26 27
+           28 29 30 31 32 33    31 32 33             28 29 30 31 32 33
+           
+Today is Tuxday, 28 of Zodrak 4109.  [4109.02.28]
+````
+
+It doesn't fit on a single 24x80 screen (not that it was a goal), but it's close enough to potentially make it a tempting goal in the future.
 
