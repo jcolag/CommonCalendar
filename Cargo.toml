@@ -5,3 +5,4 @@ authors = ["John Colagioia <john@colagioia.net>"]
 
 [dependencies]
 time = "0.1"
+getopts = "*"
