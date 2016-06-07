@@ -1,9 +1,14 @@
+extern crate getopts;
 extern crate time;
 
 use std::collections::LinkedList;
 use std::str::Split;
 
+mod args;
+
 fn main() {
+    let args: std::env::Args = std::env::args();
+    let opts = args::parse_args(args);
     let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
     let moy = ["Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda", "Kib", "Broket"];
     let dpm = 33;
