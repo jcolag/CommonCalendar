@@ -19,6 +19,10 @@ fn main() {
     let mut moff = yoff;
     let mut months_across = LinkedList::<String>::new();
 
+    if opts.exit {
+        return;
+    }
+
     for mm in 0..mpy {
         let spaces = (17 - moy[mm].len()) / 2;
         let mut month_text = format!("");
