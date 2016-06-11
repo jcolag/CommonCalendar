@@ -28,7 +28,7 @@ pub fn parse_args(arguments: Args) -> Arguments {
         Err(f) => { panic!(f.to_string()) }
     };
 
-    let mut args = Arguments {
+    let args = Arguments {
         program_name: "".to_string(),
         date_only: matches.opt_present("d"),
         has_month: matches.opt_present("m"),
