@@ -23,64 +23,68 @@ fn main() {
         return;
     }
 
-    for mm in 0..mpy {
-        let spaces = (17 - moy[mm].len()) / 2;
-        let mut month_text = format!("");
-        for _ in 0..spaces {
-            month_text = format!("{} ", month_text);
-        }
+    if !opts.date_only {
+		for mm in 0..mpy {
+		    let spaces = (17 - moy[mm].len()) / 2;
+		    let mut month_text = format!("");
+		    for _ in 0..spaces {
+		        month_text = format!("{} ", month_text);
+		    }
 
-        month_text = format!("{}{}", month_text, moy[mm]);
-        for _ in 0..(18 - spaces - moy[mm].len()) {
-            month_text = format!("{} ", month_text);
-        }
+		    month_text = format!("{}{}", month_text, moy[mm]);
+		    for _ in 0..(18 - spaces - moy[mm].len()) {
+		        month_text = format!("{} ", month_text);
+		    }
 
-        month_text = format!("{}\n", month_text);
-        for dd in 0..dpw {
-            let mut abbrd = String::from(dow[dd]);
-            abbrd.truncate(2);
-            month_text = format!("{}{} ", month_text, abbrd);
-        }
+		    month_text = format!("{}\n", month_text);
+		    for dd in 0..dpw {
+		        let mut abbrd = String::from(dow[dd]);
+		        abbrd.truncate(2);
+		        month_text = format!("{}{} ", month_text, abbrd);
+		    }
 
-        let dd = if mm == month { day } else { 1000 };
-        let days = format_days(moff, dpm, dpw, dd);
-        month_text = format!("{}{}", month_text, days.0);
-        moff = days.1;
-        if mm == 2 {
-            month_text = format!("{}--  Peer  Day  --", month_text);
-        }
-        else if mm == 6 {
-            month_text = format!("{}--Torrent Feast--", month_text);
-        }
-        else if is_leap_year(year) && mm == 10 {
-            month_text = format!("{}--Immersion Day--", month_text);
-        }
+		    let dd = if mm == month { day } else { 1000 };
+		    let days = format_days(moff, dpm, dpw, dd);
+		    month_text = format!("{}{}", month_text, days.0);
+		    moff = days.1;
+		    if mm == 2 {
+		        month_text = format!("{}--  Peer  Day  --", month_text);
+		    }
+		    else if mm == 6 {
+		        month_text = format!("{}--Torrent Feast--", month_text);
+		    }
+		    else if is_leap_year(year) && mm == 10 {
+		        month_text = format!("{}--Immersion Day--", month_text);
+		    }
 
-        month_text = format!("{}\n", month_text);
-        months_across.push_back(month_text);
-        if mm % 4 == 3 {
-            month_zipper(months_across.clone(), "   ", 1);
-            months_across.clear();
-        }
+		    month_text = format!("{}\n", month_text);
+		    months_across.push_back(month_text);
+		    if mm % 4 == 3 {
+		        month_zipper(months_across.clone(), "   ", 1);
+		        months_across.clear();
+		    }
+		}
+
+		month_zipper(months_across.clone(), "   ", 11);
     }
 
-    month_zipper(months_across.clone(), "   ", 11);
-    let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
-    let mut daystr = format!("{:02}.{:02}", month + 1, day);
-    if day == 34 {
-        if month == 2 {
-            datestr = format!("Peer Day");
-            daystr = format!("P");
-        }
-        else if month == 6 {
-            datestr = format!("Torrent Feast");
-            daystr = format!("T");
-        }
-        else if month == 10 {
-            datestr = format!("Immersion Feast");
-            daystr = format!("T");
-        }
-    }
+	let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
+	let mut daystr = format!("{:02}.{:02}", month + 1, day);
+	if day == 34 {
+	    if month == 2 {
+	        datestr = format!("Peer Day");
+	        daystr = format!("P");
+	    }
+	    else if month == 6 {
+	        datestr = format!("Torrent Feast");
+	        daystr = format!("T");
+	    }
+	    else if month == 10 {
+	        datestr = format!("Immersion Feast");
+	        daystr = format!("T");
+	    }
+	}
+
     let hol = format!("{}", what_holiday(month, day));
     println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
 }
