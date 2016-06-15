@@ -35,17 +35,17 @@ pub fn parse_args(arguments: Args) -> Arguments {
         month: match matches.opt_str("m") {
             Some(m) => match m.parse::<usize>() {
                 Ok(mm) => mm,
-                Err(_) => 0,
+                Err(_) => usize::max_value(),
             },
-            None => 0,
+            None => usize::max_value(),
         },
         has_year: matches.opt_present("y"),
         year: match matches.opt_str("y") {
             Some(y) => match y.parse::<usize>() {
                 Ok(mm) => mm,
-                Err(_) => 0,
+                Err(_) => usize::max_value(),
             },
-            None => 0,
+            None => usize::max_value(),
         },
         exit: matches.opt_present("h"),
     };
