@@ -34,7 +34,7 @@ pub fn parse_args(arguments: Args) -> Arguments {
         has_month: matches.opt_present("m"),
         month: match matches.opt_str("m") {
             Some(m) => match m.parse::<usize>() {
-                Ok(mm) => mm,
+                Ok(mm) => mm - 1,
                 Err(_) => usize::max_value(),
             },
             None => usize::max_value(),
