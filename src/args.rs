@@ -28,7 +28,7 @@ pub fn parse_args(arguments: Args) -> Arguments {
         Err(f) => { panic!(f.to_string()) }
     };
 
-    let args = Arguments {
+    let mut args = Arguments {
         program_name: "".to_string(),
         date_only: matches.opt_present("d"),
         has_month: matches.opt_present("m"),
@@ -49,6 +49,11 @@ pub fn parse_args(arguments: Args) -> Arguments {
         },
         exit: matches.opt_present("h"),
     };
+    
+    if args.month > 10 {
+        args.has_month = false;
+        args.month = usize::max_value();
+    }
 
     if args.exit {
         print_usage(&*args.program_name, opts);
