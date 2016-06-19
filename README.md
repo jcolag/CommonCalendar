@@ -1,5 +1,44 @@
 # CommonCalendar
+
 Displays a not-necessarily-serious calendar.
+
+## Usage
+
+Obviously, from the project's root folder, you should be able to try...
+
+    cargo run
+
+Alternatively, try...
+
+    ./target/ccal
+
+Same deal.  If you want to use any arguments, `cargo` requires preceding them with `--` to separate them from its own.  Those parameters include the following.
+
+|**Short Form**|**Long Form**|**Type** |**Default**|**Description**|
+|:------------:| ----------- |:-------:|:---------:| ------------- |
+| -h | --help  |         |            | Print help information |
+| -d | --date  |         |            | Print only the current date |
+| -m | --month | integer | this month | Print only the month's calendar |
+| -y | --year  | integer | this year  | Print only the year's calendar |
+
+If `month` or `year` aren't in their proper bounds, the parameter is ignored.
+
+For example,
+
+    cargo run -- -y 0 -m 1
+
+Produces a calendar for Jabim, year 0.
+
+          Jabim
+    Du Si Wi Tu Gn Co 
+     1  2  3  4  5  6 
+     7  8  9 10 11 12 
+    13 14 15 16 17 18 
+    19 20 21 22 23 24 
+    25 26 27 28 29 30 
+    31 32 33 
+
+There's room for expansion, but that should handle most requirements, given the premise.
 
 ## Concept
 
