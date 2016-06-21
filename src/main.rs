@@ -17,9 +17,10 @@ fn main() {
     let (year, month, day, yoff) = current_day(time::now());
     let mut select_year = year;
     let mut select_yoff = yoff;
-    if opts.has_year && opts.year < usize::max_value() {
+    if opts.has_year && opts.year < i16::max_value() {
         select_year = opts.year;
-        select_yoff = select_year % 2 * 3;
+        let rem = select_year % 2;
+        select_yoff = (rem + if rem < 0 { 2 } else { 0 }) as usize * 3;
     }
 
     let wd = (select_yoff + month * 3 + day - 1) % dpw;
@@ -166,7 +167,7 @@ fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String
     return (month, if moff == 0 { 3 } else { 0 });
 }
 
-fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
+fn current_day(current_time: time::Tm) -> (i16, usize, usize, usize) {
     let epoch_days_offset = 1483889;
     let seconds_per_day = 86400;
     let now = current_time.to_timespec();
@@ -208,8 +209,8 @@ fn current_day(current_time: time::Tm) -> (usize, usize, usize, usize) {
     return (year, month as usize, day as usize + 1, (year % 2 * 3) as usize);
 }
 
-fn is_leap_year(year: usize) -> bool {
-    let rem = year % 33;
+fn is_leap_year(year: i16) -> bool {
+    let rem = year % 33 + if year < 0 { 33 } else { 0 };
     return rem != 0 && rem % 4 == 0;
 }
 

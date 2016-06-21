@@ -6,7 +6,7 @@ pub struct Arguments {
     pub has_month: bool,
     pub month: usize,
     pub has_year: bool,
-    pub year: usize,
+    pub year: i16,
     pub date_only: bool,
     pub exit: bool,
 }
@@ -41,15 +41,14 @@ pub fn parse_args(arguments: Args) -> Arguments {
         },
         has_year: matches.opt_present("y"),
         year: match matches.opt_str("y") {
-            Some(y) => match y.parse::<usize>() {
-                Ok(mm) => mm,
-                Err(_) => usize::max_value(),
+            Some(y) => match y.parse::<i16>() {
+                Ok(yy) => yy,
+                Err(_) => i16::max_value(),
             },
-            None => usize::max_value(),
+            None => i16::max_value(),
         },
         exit: matches.opt_present("h"),
     };
-    
     if args.month > 10 {
         args.has_month = false;
         args.month = usize::max_value();
