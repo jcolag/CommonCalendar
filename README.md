@@ -38,6 +38,12 @@ Produces a calendar for Jabim, year 0.
     25 26 27 28 29 30 
     31 32 33 
 
+__Note__:  Due to the library parsing the command-line, negative years can be requested, but without a space:
+
+    ./target/ccal -y-500
+
+With a space, since the year number is optional, the library treats it like another argument, triggering an error.
+
 There's room for expansion, but that should handle most requirements, given the premise.
 
 ## Concept
@@ -133,7 +139,7 @@ Like all approximations, this regime does still drift.  Here, the calendar will 
 
 ### Start Date
 
-The trickiest part of _The Commons Calendar_ was deciding on a date from which to anchor the dates, the first of Jabim, Year 0.  A zero-year is, of course, a necessity for easily handling dates _prior_ to the calendar.
+The trickiest part of _The Commons Calendar_ was deciding on a date from which to anchor the dates, the first of Jabim, Year 0.  A zero-year is, of course, a necessity for easily handling dates _prior_ to the calendar, and such years are represented by a negative number.
 
 Early candidates included the releases of works important to Free Culture, like the [GNU Manifesto](https://en.wikipedia.org/wiki/GNU_Manifesto) (March AD 1985), the [GNU Public License](https://en.wikipedia.org/wiki/GNU_General_Public_License) (25 February AD 1989), the [Open Content Project](https://en.wikipedia.org/wiki/Open_Content_Project) (c AD 1998), [Creative Commons](https://en.wikipedia.org/wiki/Creative_Commons) (December AD 2002), and others.  None of those felt right, however.  It was similarly difficult to authenticate a first Free Culture work, with many candidates offered with little evidence and rarely specific dates.
 
