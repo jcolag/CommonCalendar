@@ -163,7 +163,7 @@ In addition, there are holidays that are both naturally relevant and (accounting
  
  - Vernal (Northward) Equinox, 21 Broket:  Spring brings an assortment of holidays with birth and rebirth themes and implicit or explicit fertility rites.  Easter, Passover, many calendar new years, Mother's Day, Sham el-Nessim, and so forth.  Planting and fertility, lastly, map to the freedom to study works, including their sources.
 
-Note that these are the interpretation of the Northern Hemisphere.  In much of the Southern Hemisphere, the seasons are clearly offset by two in the cycle.  Additionally, examples may vary from the actual date, given that various calendars originate historically on Lunar calendars.
+Note that these are the interpretation of the Northern Hemisphere.  In much of the Southern Hemisphere, the seasons are clearly offset by two in the cycle.  Additionally, examples may vary from the actual date, given that many holidays originate historically on Lunar calendars.
 
 To round this out, International Workers' Day is recommended (28 Jabim), as it effectively celebrates collective problem-solving and the nameless, toiling workers, which seems to reflect the general Free Culture ethos.  In addition, we can also add the Free Culture equivalents of [Hallmark holidays](https://en.wikipedia.org/wiki/Hallmark_holiday), the days dedicated to promoting some aspect of Free Culture:  Document Freedom Day, Hardware Freedom Day, Culture Freedom Day, Software Freedom Day, and Open Access Day.
 
