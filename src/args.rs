@@ -48,13 +48,11 @@ pub fn parse_args(arguments: Args) -> Arguments {
             None => usize::max_value(),
         },
         has_year: matches.opt_present("y"),
-        year: match matches.opt_str("y") {
-            Some(y) => match y.parse::<i16>() {
-                Ok(yy) => yy,
-                Err(_) => i16::max_value(),
-            },
-            None => i16::max_value(),
-        },
+        year: matches
+            .opt_str("y")
+            .unwrap_or_else(|| i16::max_value().to_string())
+            .parse::<i16>()
+            .unwrap(),
         exit: matches.opt_present("h"),
     };
     if args.month > 10 {

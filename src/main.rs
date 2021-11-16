@@ -49,7 +49,7 @@ fn main() {
             }
 
             let spaces = (17 - moy[select_month].len()) / 2;
-            let mut month_text = format!("");
+            let mut month_text = "".to_string();
             for _ in 0..spaces {
                 month_text = format!("{} ", month_text);
             }
@@ -60,8 +60,8 @@ fn main() {
             }
 
             month_text = format!("{}\n", month_text);
-            for dd in 0..dpw {
-                let mut abbrd = String::from(dow[dd]);
+            for dd in dow.iter().take(dpw) {
+                let mut abbrd = String::from(*dd);
                 abbrd.truncate(2);
                 month_text = format!("{}{} ", month_text, abbrd);
             }
@@ -79,21 +79,21 @@ fn main() {
 
             println!("{}", month_text);
         } else {
-            for mm in 0..mpy {
-                let spaces = (17 - moy[mm].len()) / 2;
+            for (mm, mon) in moy.iter().enumerate().take(mpy) {
+                let spaces = (17 - mon.len()) / 2;
                 let mut month_text = format!("");
                 for _ in 0..spaces {
                     month_text = format!("{} ", month_text);
                 }
 
                 month_text = format!("{}{}", month_text, moy[mm]);
-                for _ in 0..(18 - spaces - moy[mm].len()) {
+                for _ in 0..(18 - spaces - mon.len()) {
                     month_text = format!("{} ", month_text);
                 }
 
                 month_text = format!("{}\n", month_text);
-                for dd in 0..dpw {
-                    let mut abbrd = String::from(dow[dd]);
+                for dd in dow.iter().take(dpw) {
+                    let mut abbrd = String::from(*dd);
                     abbrd.truncate(2);
                     month_text = format!("{}{} ", month_text, abbrd);
                 }
@@ -127,18 +127,18 @@ fn main() {
         let mut daystr = format!("{:02}.{:02}", month + 1, day);
         if day == 34 {
             if month == 2 {
-                datestr = format!("Peer Day");
-                daystr = format!("P");
+                datestr = "Peer Day".to_string();
+                daystr = "P".to_string();
             } else if month == 6 {
-                datestr = format!("Torrent Feast");
-                daystr = format!("T");
+                datestr = "Torrent Feast".to_string();
+                daystr = "T".to_string();
             } else if month == 10 {
-                datestr = format!("Immersion Feast");
-                daystr = format!("T");
+                datestr = "Immersion Feast".to_string();
+                daystr = "T".to_string();
             }
         }
 
-        let hol = format!("{}", what_holiday(month, day));
+        let hol = what_holiday(month, day);
         println!(
             "Today is {} {}{}.  [{}.{}]",
             datestr, year, hol, year, daystr
@@ -177,7 +177,7 @@ fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String
     }
 
     month = format!("{}\n", month);
-    return (month, if moff == 0 { 3 } else { 0 });
+    (month, if moff == 0 { 3 } else { 0 })
 }
 
 fn current_day(current_time: time::Tm) -> (i16, usize, usize, usize) {
@@ -219,56 +219,60 @@ fn current_day(current_time: time::Tm) -> (i16, usize, usize, usize) {
     }
 
     let day = days_remaining;
-    return (
+
+    (
         year,
         month as usize,
         day as usize + 1,
         (year % 2 * 3) as usize,
-    );
+    )
 }
 
 fn is_leap_year(year: i16) -> bool {
     let rem = year % 33 + if year < 0 { 33 } else { 0 };
-    return rem != 0 && rem % 4 == 0;
+
+    rem != 0 && rem % 4 == 0
 }
 
 fn what_holiday(month: usize, day: usize) -> String {
-    let mut result = format!("");
+    let mut result = "".to_string();
     if month == 0 && day == 1 {
-        result = format!(", New Year's Day");
+        result = ", New Year's Day".to_string();
     } else if month == 2 && day == 12 {
-        result = format!(", Purification Day");
+        result = ", Purification Day".to_string();
     } else if month == 2 && day == 24 {
-        result = format!(", Document Freedom Day");
+        result = ", Document Freedom Day".to_string();
     } else if month == 3 && day == 33 {
-        result = format!(", Hardware Freedom Day");
+        result = ", Hardware Freedom Day".to_string();
     } else if month == 5 && day == 4 {
-        result = format!(", Harvest Gift");
+        result = ", Harvest Gift".to_string();
     } else if month == 5 && day == 9 {
-        result = format!(", Culture Freedom Day");
+        result = ", Culture Freedom Day".to_string();
     } else if month == 7 && day == 29 {
-        result = format!(", Familytide");
+        result = ", Familytide".to_string();
     } else if month == 8 && day == 33 {
-        result = format!(", Software Freedom Day");
+        result = ", Software Freedom Day".to_string();
     } else if month == 9 && day == 30 {
-        result = format!(", Open Access Day");
+        result = ", Open Access Day".to_string();
     } else if month == 10 && day == 21 {
-        result = format!(", Freedom Day");
+        result = ", Freedom Day".to_string();
     } else if month == 0 && day == 27 {
-        result = format!(", International Workers' Day");
+        result = ", International Workers' Day".to_string();
     }
-    return result;
+
+    result
 }
 
 fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
-    let month_iterator = months.iter();
     let mut length = 0;
     let mut split_months = LinkedList::<Split<&str>>::new();
-    for m in month_iterator {
+    for m in months.iter() {
         let split = m.split("\n");
+
         if split.clone().count() > length {
             length = split.clone().count();
         }
+
         split_months.push_back(split);
     }
 
@@ -277,16 +281,17 @@ fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
             print!(" ");
         }
 
-        let split_iterator = split_months.iter();
         let mut full_line = format!("");
-        for m in split_iterator {
+        for m in split_months.iter() {
             let line = m.clone().nth(i);
-            match line {
-                Some(l) => {
-                    let part = if l.is_empty() { "                  " } else { l };
-                    full_line = format!("{}{}{}", full_line, part, buffer);
-                }
-                None => {}
+
+            if let Some(l) = line {
+                let part = if l.is_empty() {
+                    "                  "
+                } else {
+                    l
+                };
+                full_line = format!("{}{}{}", full_line, part, buffer);
             }
         }
 
