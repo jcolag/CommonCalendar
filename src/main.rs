@@ -9,8 +9,18 @@ mod args;
 fn main() {
     let args: std::env::Args = std::env::args();
     let opts = args::parse_args(args);
-    let dow = ["Duinday", "Sitaday", "Wikiday", "Tuxday", "Gnuday", "Commonday"];
-    let moy = ["Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda", "Kib", "Broket"];
+    let dow = [
+        "Duinday",
+        "Sitaday",
+        "Wikiday",
+        "Tuxday",
+        "Gnuday",
+        "Commonday",
+    ];
+    let moy = [
+        "Jabim", "Zodrak", "Trogool", "Yanar", "Shkumbe", "Habniah", "Skarl", "Mikon", "Pertunda",
+        "Kib", "Broket",
+    ];
     let dpm = 33;
     let dpw = dow.len();
     let mpy = moy.len();
@@ -30,7 +40,7 @@ fn main() {
     if opts.exit {
         return;
     }
-    
+
     if !opts.date_only {
         if opts.has_month {
             let mut select_month = month;
@@ -38,104 +48,101 @@ fn main() {
                 select_month = opts.month;
             }
 
-			let spaces = (17 - moy[select_month].len()) / 2;
-			let mut month_text = format!("");
-			for _ in 0..spaces {
-			    month_text = format!("{} ", month_text);
-			}
-			
-			month_text = format!("{}{}", month_text, moy[select_month]);
-			for _ in 0..(18 - spaces - moy[select_month].len()) {
-			    month_text = format!("{} ", month_text);
-			}
+            let spaces = (17 - moy[select_month].len()) / 2;
+            let mut month_text = format!("");
+            for _ in 0..spaces {
+                month_text = format!("{} ", month_text);
+            }
 
-			month_text = format!("{}\n", month_text);
-			for dd in 0..dpw {
-			    let mut abbrd = String::from(dow[dd]);
-			    abbrd.truncate(2);
-			    month_text = format!("{}{} ", month_text, abbrd);
-			}
+            month_text = format!("{}{}", month_text, moy[select_month]);
+            for _ in 0..(18 - spaces - moy[select_month].len()) {
+                month_text = format!("{} ", month_text);
+            }
 
-			let dd = if select_month == month { day } else { 1000 };
-			let days = format_days(moff, dpm, dpw, dd);
-			month_text = format!("{}{}", month_text, days.0);
-			if select_month == 2 {
-			    month_text = format!("{}--  Peer  Day  --", month_text);
-			}
-			else if select_month == 6 {
-			    month_text = format!("{}--Torrent Feast--", month_text);
-			}
-			else if is_leap_year(select_year) && select_month == 10 {
-			    month_text = format!("{}--Immersion Day--", month_text);
-			}
+            month_text = format!("{}\n", month_text);
+            for dd in 0..dpw {
+                let mut abbrd = String::from(dow[dd]);
+                abbrd.truncate(2);
+                month_text = format!("{}{} ", month_text, abbrd);
+            }
 
-			println!("{}", month_text);
+            let dd = if select_month == month { day } else { 1000 };
+            let days = format_days(moff, dpm, dpw, dd);
+            month_text = format!("{}{}", month_text, days.0);
+            if select_month == 2 {
+                month_text = format!("{}--  Peer  Day  --", month_text);
+            } else if select_month == 6 {
+                month_text = format!("{}--Torrent Feast--", month_text);
+            } else if is_leap_year(select_year) && select_month == 10 {
+                month_text = format!("{}--Immersion Day--", month_text);
+            }
+
+            println!("{}", month_text);
         } else {
-			for mm in 0..mpy {
-				let spaces = (17 - moy[mm].len()) / 2;
-				let mut month_text = format!("");
-				for _ in 0..spaces {
-				    month_text = format!("{} ", month_text);
-				}
+            for mm in 0..mpy {
+                let spaces = (17 - moy[mm].len()) / 2;
+                let mut month_text = format!("");
+                for _ in 0..spaces {
+                    month_text = format!("{} ", month_text);
+                }
 
-				month_text = format!("{}{}", month_text, moy[mm]);
-				for _ in 0..(18 - spaces - moy[mm].len()) {
-				    month_text = format!("{} ", month_text);
-				}
+                month_text = format!("{}{}", month_text, moy[mm]);
+                for _ in 0..(18 - spaces - moy[mm].len()) {
+                    month_text = format!("{} ", month_text);
+                }
 
-				month_text = format!("{}\n", month_text);
-				for dd in 0..dpw {
-				    let mut abbrd = String::from(dow[dd]);
-				    abbrd.truncate(2);
-				    month_text = format!("{}{} ", month_text, abbrd);
-				}
+                month_text = format!("{}\n", month_text);
+                for dd in 0..dpw {
+                    let mut abbrd = String::from(dow[dd]);
+                    abbrd.truncate(2);
+                    month_text = format!("{}{} ", month_text, abbrd);
+                }
 
-				let dd = if mm == month { day } else { 1000 };
-				let days = format_days(moff, dpm, dpw, dd);
-				month_text = format!("{}{}", month_text, days.0);
-				moff = days.1;
-				if mm == 2 {
-				    month_text = format!("{}--  Peer  Day  --", month_text);
-				}
-				else if mm == 6 {
-				    month_text = format!("{}--Torrent Feast--", month_text);
-				}
-				else if is_leap_year(select_year) && mm == 10 {
-				    month_text = format!("{}--Immersion Day--", month_text);
-				}
+                let dd = if mm == month { day } else { 1000 };
+                let days = format_days(moff, dpm, dpw, dd);
+                month_text = format!("{}{}", month_text, days.0);
+                moff = days.1;
+                if mm == 2 {
+                    month_text = format!("{}--  Peer  Day  --", month_text);
+                } else if mm == 6 {
+                    month_text = format!("{}--Torrent Feast--", month_text);
+                } else if is_leap_year(select_year) && mm == 10 {
+                    month_text = format!("{}--Immersion Day--", month_text);
+                }
 
-				month_text = format!("{}\n", month_text);
-				months_across.push_back(month_text);
-				if mm % 4 == 3 {
-				    month_zipper(months_across.clone(), "   ", 1);
-				    months_across.clear();
-				}
-			}
+                month_text = format!("{}\n", month_text);
+                months_across.push_back(month_text);
+                if mm % 4 == 3 {
+                    month_zipper(months_across.clone(), "   ", 1);
+                    months_across.clear();
+                }
+            }
 
-			month_zipper(months_across.clone(), "   ", 11);
+            month_zipper(months_across.clone(), "   ", 11);
         }
     }
 
     if !opts.has_year && !opts.has_month {
-		let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
-		let mut daystr = format!("{:02}.{:02}", month + 1, day);
-		if day == 34 {
-			if month == 2 {
-			    datestr = format!("Peer Day");
-			    daystr = format!("P");
-			}
-			else if month == 6 {
-			    datestr = format!("Torrent Feast");
-			    daystr = format!("T");
-			}
-			else if month == 10 {
-			    datestr = format!("Immersion Feast");
-			    daystr = format!("T");
-			}
-		}
+        let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
+        let mut daystr = format!("{:02}.{:02}", month + 1, day);
+        if day == 34 {
+            if month == 2 {
+                datestr = format!("Peer Day");
+                daystr = format!("P");
+            } else if month == 6 {
+                datestr = format!("Torrent Feast");
+                daystr = format!("T");
+            } else if month == 10 {
+                datestr = format!("Immersion Feast");
+                daystr = format!("T");
+            }
+        }
 
-		let hol = format!("{}", what_holiday(month, day));
-		println!("Today is {} {}{}.  [{}.{}]", datestr, year, hol, year, daystr);
+        let hol = format!("{}", what_holiday(month, day));
+        println!(
+            "Today is {} {}{}.  [{}.{}]",
+            datestr, year, hol, year, daystr
+        );
     }
 }
 
@@ -146,20 +153,26 @@ fn format_days(moff: usize, dpm: usize, dpw: usize, highlight: usize) -> (String
         month = format!("{}\n", month);
     }
 
-    for _ in 0 .. moff {
+    for _ in 0..moff {
         month = format!("{}   ", month);
     }
 
-    for day in 1 .. dpm + 1 {
+    for day in 1..dpm + 1 {
         if (day + moff) % dpw == 1 {
             month = format!("{}\n", month);
         }
 
-        let ch = if day == highlight { ">" } else if day + 1 == highlight { "<" } else { " " };
+        let ch = if day == highlight {
+            ">"
+        } else if day + 1 == highlight {
+            "<"
+        } else {
+            " "
+        };
         month = format!("{}{:2}{}", month, day, ch);
     }
 
-    for _ in 0 .. (3 - moff) {
+    for _ in 0..(3 - moff) {
         month = format!("{}   ", month);
     }
 
@@ -176,7 +189,7 @@ fn current_day(current_time: time::Tm) -> (i16, usize, usize, usize) {
     let leap_year = 4;
     let not_leap_year = 33;
     let days_per_month = 33;
-    
+
     let mut count = 1;
     let mut days_remaining = days_since_epoch;
     let mut year = 0;
@@ -206,7 +219,12 @@ fn current_day(current_time: time::Tm) -> (i16, usize, usize, usize) {
     }
 
     let day = days_remaining;
-    return (year, month as usize, day as usize + 1, (year % 2 * 3) as usize);
+    return (
+        year,
+        month as usize,
+        day as usize + 1,
+        (year % 2 * 3) as usize,
+    );
 }
 
 fn is_leap_year(year: i16) -> bool {
@@ -218,35 +236,25 @@ fn what_holiday(month: usize, day: usize) -> String {
     let mut result = format!("");
     if month == 0 && day == 1 {
         result = format!(", New Year's Day");
-    }
-    else if month == 2 && day == 12 {
+    } else if month == 2 && day == 12 {
         result = format!(", Purification Day");
-    }
-    else if month == 2 && day == 24 {
+    } else if month == 2 && day == 24 {
         result = format!(", Document Freedom Day");
-    }
-    else if month == 3 && day == 33 {
+    } else if month == 3 && day == 33 {
         result = format!(", Hardware Freedom Day");
-    }
-    else if month == 5 && day == 4 {
+    } else if month == 5 && day == 4 {
         result = format!(", Harvest Gift");
-    }
-    else if month == 5 && day == 9 {
+    } else if month == 5 && day == 9 {
         result = format!(", Culture Freedom Day");
-    }
-    else if month == 7 && day == 29 {
+    } else if month == 7 && day == 29 {
         result = format!(", Familytide");
-    }
-    else if month == 8 && day == 33 {
+    } else if month == 8 && day == 33 {
         result = format!(", Software Freedom Day");
-    }
-    else if month == 9 && day == 30 {
+    } else if month == 9 && day == 30 {
         result = format!(", Open Access Day");
-    }
-    else if month == 10 && day == 21 {
+    } else if month == 10 && day == 21 {
         result = format!(", Freedom Day");
-    }
-    else if month == 0 && day == 27 {
+    } else if month == 0 && day == 27 {
         result = format!(", International Workers' Day");
     }
     return result;
@@ -275,14 +283,13 @@ fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
             let line = m.clone().nth(i);
             match line {
                 Some(l) => {
-                    let part = if l == "" { "                  " } else { l };
+                    let part = if l.is_empty() { "                  " } else { l };
                     full_line = format!("{}{}{}", full_line, part, buffer);
-                },
-                None => {},
+                }
+                None => {}
             }
         }
 
-        println!("{}", full_line.trim_right());
+        println!("{}", full_line.trim_end());
     }
 }
-

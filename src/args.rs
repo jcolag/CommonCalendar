@@ -24,8 +24,10 @@ pub fn parse_args(arguments: Args) -> Arguments {
     opts.optflagopt("y", "year", "only print the year's calendar", "YEAR");
 
     let matches = match opts.parse(arguments) {
-        Ok(m) => { m }
-        Err(f) => { panic!(f.to_string()) }
+        Ok(m) => m,
+        Err(f) => {
+            panic!("{}", f.to_string())
+        }
     };
 
     let mut args = Arguments {
@@ -34,7 +36,13 @@ pub fn parse_args(arguments: Args) -> Arguments {
         has_month: matches.opt_present("m"),
         month: match matches.opt_str("m") {
             Some(m) => match m.parse::<usize>() {
-                Ok(mm) => if mm == 0 { usize::max_value() } else { mm - 1 },
+                Ok(mm) => {
+                    if mm == 0 {
+                        usize::max_value()
+                    } else {
+                        mm - 1
+                    }
+                }
                 Err(_) => usize::max_value(),
             },
             None => usize::max_value(),
@@ -60,4 +68,3 @@ pub fn parse_args(arguments: Args) -> Arguments {
 
     args
 }
-
