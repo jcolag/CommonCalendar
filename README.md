@@ -6,11 +6,16 @@ Displays a not-necessarily-serious calendar.
 
 Obviously, from the project's root folder, you should be able to try...
 
-    cargo run
+```console
+cargo run
+```
 
 Alternatively, try...
 
-    ./target/ccal
+```console
+cargo build
+./target/debug/ccal
+```
 
 Same deal.  If you want to use any arguments, `cargo` requires preceding them with `--` to separate them from its own.  Those parameters include the following.
 
@@ -25,22 +30,34 @@ If `month` or `year` aren't in their proper bounds, the parameter is ignored.
 
 For example,
 
-    cargo run -- -y 0 -m 1
+```console
+cargo run -- -y 0 -m 1
+```
+
+or...
+
+```console
+cargo run -- --year=0 --month=1
+```
 
 Produces a calendar for Jabim, year 0.
 
-          Jabim
-    Du Si Wi Tu Gn Co 
-     1  2  3  4  5  6 
-     7  8  9 10 11 12 
-    13 14 15 16 17 18 
-    19 20 21 22 23 24 
-    25 26 27 28 29 30 
-    31 32 33 
+```
+      Jabim
+Du Si Wi Tu Gn Co
+ 1  2  3  4  5  6
+ 7  8  9 10 11 12
+13 14 15 16 17 18
+19 20 21 22 23 24
+25 26 27 28 29 30
+31 32 33
+```
 
 __Note__:  Due to the library parsing the command-line, negative years can be requested, but without a space:
 
-    ./target/ccal -y-500
+```console
+ccal -y-500
+```
 
 With a space, since the year number is optional, the library treats it like another argument, triggering an error.
 
@@ -57,7 +74,7 @@ _The Commons Calendar_ tries to start from first (if ill-advised) principles and
 The first step was to get a rough idea of the layout, by seeing the possible breakdowns of the year with various small numbers of intercalary days.
 
  - 365's prime factors are 5 x 73, which turns out to be the [Discordian calendar](https://en.wikipedia.org/wiki/Discordian_calendar).
- 
+
  - 364's prime factors (+1) are 2 x 2 x 7 x 13, which happens to be the [Positivist](https://en.wikipedia.org/wiki/Positivist_calendar)/[Georgian calendar](https://en.wikipedia.org/wiki/Hugh_Jones_%28professor%29#Georgian_Calendar_.28Pancronometer.29).
 
  - 363's prime factors (+2) are 3 x 11 x 11.
@@ -156,11 +173,11 @@ We have, of course, already seen four intended holidays:  New Year's Day, Peer D
 In addition, there are holidays that are both naturally relevant and (accounting for drifting ancient calendars and nearby historical incidents) so common and widespread that they're presumably required for any calendar:  The solstices and equinoctes.
 
  - Summer Solstice, 12 Trogool:  On the longest day of the year, many summer holidays revolve around power and purification, with fire- or water-based rituals.  There can often be some nationalist tendencies, in the modern day.  In the United States, Independence Day and Flag day flank the solstice, but those weeks are celebrated around the world (under various names) with bonfires, fireworks, waterfronts, and often dancing.  Here, this is related to the [Free Software Definition](https://www.gnu.org/philosophy/free-sw.html)'s freedom to copy and improve works.
- 
+
  - Autumnal (Southward) Equinox, 04 Habinah:  Harvest festivals and feasts abound, though naturally, many are pushed back to the actual harvest season.  Most regions have one, with Thanksgiving in the United States probably being the latest in the year.  Chuseok, Pomona, Mehregan, and so forth are also strongly related.  Here, harvest broadly resembles the freedom to redistribute works.
- 
+
  - Winter Solstice, 29 Mikon:  On the longest night of the year, reflection on death and conservation abounds, often with a final feast of the season.  It also tends to be associated with solar or fire birth mythology, presumably due to the day being short and (in the Northern hemisphere) the sun being at its smallest.  Christmas and its related traditions figure into the period, as does Dongzhi, Korochun, Sanghamitta Day, Hanukkah, Shalako, Shab-e Chelleh, Yule, and so forth.  Winter traditions map to the freedom to use works for any purpose.
- 
+
  - Vernal (Northward) Equinox, 21 Broket:  Spring brings an assortment of holidays with birth and rebirth themes and implicit or explicit fertility rites.  Easter, Passover, many calendar new years, Mother's Day, Sham el-Nessim, and so forth.  Planting and fertility, lastly, map to the freedom to study works, including their sources.
 
 Note that these are the interpretation of the Northern Hemisphere.  In much of the Southern Hemisphere, the seasons are clearly offset by two in the cycle.  Additionally, examples may vary from the actual date, given that many holidays originate historically on Lunar calendars.
@@ -198,7 +215,7 @@ Running the program on May 31st, 2016, produces the following calendar for the y
            16 17 18 19 20 21    19 20 21 22 23 24    16 17 18 19 20 21
            22 23 24 25 26 27    25 26 27 28 29 30    22 23 24 25 26 27
            28 29 30 31 32 33    31 32 33             28 29 30 31 32 33
-           
+
 Today is Tuxday, 28 of Zodrak 4109.  [4109.02.28]
 ````
 
