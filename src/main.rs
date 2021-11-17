@@ -265,9 +265,9 @@ fn what_holiday(month: usize, day: usize) -> String {
 
 fn month_zipper(months: LinkedList<String>, buffer: &str, front: usize) {
     let mut length = 0;
-    let mut split_months = LinkedList::<Split<&str>>::new();
+    let mut split_months = LinkedList::<Split<char>>::new();
     for m in months.iter() {
-        let split = m.split("\n");
+        let split = m.split('\n');
 
         if split.clone().count() > length {
             length = split.clone().count();
