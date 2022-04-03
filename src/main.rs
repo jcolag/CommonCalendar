@@ -123,7 +123,7 @@ fn main() {
     }
 
     if !opts.has_year && !opts.has_month {
-        let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month]);
+        let mut datestr = format!("{}, {:02} of {}", dow[wd], day, moy[month % 11]);
         let mut daystr = format!("{:02}.{:02}", month + 1, day);
         if day == 34 {
             if month == 2 {
